@@ -11,3 +11,8 @@ restart:
 	@make up
 app:
 	docker-compose exec php bin/bash
+ghpages
+	git checkout -b gh-pages
+	git push origin gh-pages
+	git checkout main
+	git branch -d gh-pages
