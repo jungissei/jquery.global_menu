@@ -16,3 +16,5 @@ ghpages:
 	git push origin gh-pages
 	git checkout main
 	git branch -d gh-pages
+jquery:
+	cp node_modules/jquery/dist/jquery.min.js lib/js/jquery.min.js
