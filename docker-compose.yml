@@ -5,6 +5,6 @@ services:
     image: httpd
     container_name: httpd
     volumes:
-      - ./demo:/usr/local/apache2/htdocs/
+      - ./:/usr/local/apache2/htdocs/
     ports:
       - "8080:80"

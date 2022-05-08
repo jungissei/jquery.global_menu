@@ -9,7 +9,6 @@
 const { src, watch, dest, series, parallel } = require('gulp'),
   plumber = require('gulp-plumber'),
   notify = require('gulp-notify'),
-  sassGlob = require('gulp-sass-glob-use-forward'),
   sass = require('gulp-sass')(require('sass')),
   autoprefixer = require('gulp-autoprefixer'),
   sourcemaps = require('gulp-sourcemaps'),
@@ -27,8 +26,9 @@ const compile_sass = () =>
     .pipe(plumber({                    // watch中にエラーが発生してもwatchが止まらないようにする
       errorHandler: notify.onError('<%= error.message %>')
     }))
-    .pipe(sassGlob())                          // glob機能を使って@useや@forwardを省略する
-    .pipe(sass())                              // sassのコンパイルをする
+    .pipe(sass({
+      includePaths: ['lib']
+    }))                              // sassのコンパイルをする
     .pipe(autoprefixer())                      // ベンダープレフィックスを自動付与
     .pipe(dest('./lib'));
 

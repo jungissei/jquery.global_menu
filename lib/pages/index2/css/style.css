@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/*----------------------------------------------------------------------------
+* グローバルメニュー
+----------------------------------------------------------------------------*/
+/*--------------------------------------
+* ヘッダーロゴ+ナビを囲む
+--------------------------------------*/
+.gm_area .header_row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.gm_area .header_row .header_col1 {
+  width: 4em;
+}
+.gm_area .header_row .header_col2 {
+  width: calc(100% - 4em);
+}
+.gm_area .header_logo {
+  text-align: center;
+  display: block;
+  font-weight: bold;
+}

@@ -1,0 +1,13 @@
+.gm_area{
+  .gm_nav{
+    display: flex;
+    justify-content: space-around;
+
+    >.gm_nav_item {
+
+      >.gm_item_name{
+        display: block;
+      }
+    }
+  }
+}
