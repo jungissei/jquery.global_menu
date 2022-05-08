@@ -1,0 +1,26 @@
+/*----------------------------------------------------------------------------
+* グローバルメニュー
+----------------------------------------------------------------------------*/
+/*--------------------------------------
+* ヘッダーロゴ+ナビを囲む
+--------------------------------------*/
+.gm_area{
+  .header_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header_col1 {
+      width: 4em;
+    }
+    .header_col2 {
+      width: calc(100% - 4em);
+    }
+  }
+
+  .header_logo{
+    text-align: center;
+    display: block;
+    font-weight: bold;
+  }
+}

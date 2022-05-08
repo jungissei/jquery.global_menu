@@ -1,0 +1,32 @@
+.gm_area{
+  .gm_mega {
+    .gm_mega_body {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      z-index: 1;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &.is_preloaded{
+    .gm_mega {
+      .gm_mega_body {
+        transform: scale(0.9) perspective(1000);
+        transform-origin: top center;
+        transition-duration: 0.2s;
+        transition: opacity 0.2s visibility 0.2s;
+      }
+
+      &.is_show {
+        .gm_mega_body {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
