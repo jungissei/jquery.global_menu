@@ -16,57 +16,80 @@ const { src, watch, dest, series, parallel } = require('gulp'),
   minifyCss  = require('gulp-minify-css'),
   uglify = require('gulp-uglify');
 
+const lib_dir = './lib';
 
 //----------------------------------------------------------------------
 //  関数定義
 //----------------------------------------------------------------------
 // SCSS コンパイル
 const compile_sass = () =>
-  src(['./lib/**/*.scss', '!./lib/**/*.min.css'])
-    .pipe(plumber({                    // watch中にエラーが発生してもwatchが止まらないようにする
+  src([`${lib_dir}/**/*.scss`, `!${lib_dir}/**/*.min.css`])
+    // watch中にエラーが発生してもwatchが止まらないようにする
+    .pipe(plumber({
       errorHandler: notify.onError('<%= error.message %>')
     }))
-    .pipe(sass({
-      includePaths: ['lib']
-    }))                              // sassのコンパイルをする
-    .pipe(autoprefixer())                      // ベンダープレフィックスを自動付与
-    .pipe(dest('./lib'));
+
+    // sourcemap初期化
+    .pipe(sourcemaps.init())
+
+    // sassのコンパイルをする
+    .pipe(sass())
+
+    // ベンダープレフィックスを自動付与
+    .pipe(autoprefixer())
+
+    // sourcemapファイルを出力するパスを指定、書き込み
+    .pipe(sourcemaps.write('./'))
+
+    .pipe(dest(lib_dir));
 
 // CSS 縮小
 const minify_css = () =>
-  src(['./lib/**/*.css', '!./lib/**/*.min.css'])
-    .pipe(sourcemaps.init())                   // sourcemap初期化
-    .pipe(plumber({                    // watch中にエラーが発生してもwatchが止まらないようにする
+  src([`${lib_dir}/**/*.css`, `!${lib_dir}/**/*.min.css`])
+    // watch中にエラーが発生してもwatchが止まらないようにする
+    .pipe(plumber({
       errorHandler: notify.onError('<%= error.message %>')
     }))
-    .pipe(minifyCss({advanced:false})) // minify
-    .pipe(rename({extname: '.min.css'}))  // 拡張子変更
-    .pipe(sourcemaps.write('./'))        // sourcemapファイルを出力するパスを指定、書き込み
-    .pipe(dest('./lib'));
+
+    // minify
+    .pipe(minifyCss({advanced:false}))
+
+    // 拡張子変更
+    .pipe(rename({extname: '.min.css'}))
+    .pipe(dest(lib_dir));
 
 //JS
 const minify_js = () =>
-  src(['./lib/**/*.js', '!./lib/**/*.min.js'])
-    .pipe(sourcemaps.init())                      // sourcemap初期化
-    .pipe(plumber({                       // watch中にエラーが発生してもwatchが止まらないようにする
+  src([`${lib_dir}/**/*.js`, `!${lib_dir}/**/*.min.js`])
+    // sourcemap初期化
+    .pipe(sourcemaps.init())
+
+    // watch中にエラーが発生してもwatchが止まらないようにする
+    .pipe(plumber({
       errorHandler: notify.onError('<%= error.message %>')
     }))
-    .pipe(uglify())                               // コード内の不要な改行やインデントを削除
-    .pipe(rename({extname: '.min.js'}))      // 拡張子変更
-    .pipe(sourcemaps.write('./'))           // sourcemapファイルを出力するパスを指定、書き込み
-    .pipe(dest('./lib'));
+
+    // コード内の不要な改行やインデントを削除
+    .pipe(uglify())
+
+    // 拡張子変更
+    .pipe(rename({extname: '.min.js'}))
+
+    // sourcemapファイルを出力するパスを指定、書き込み
+    .pipe(sourcemaps.write('./'))
+    .pipe(dest(lib_dir));
 
 //----------------------------------------------------------------------
 //  watch
 //----------------------------------------------------------------------
 const watch_sass = () =>
-  watch(['./lib/**/*.scss', '!./lib/**/*.min.css'], series(
+  watch([`${lib_dir}/**/*.scss`, `!${lib_dir}/**/*.min.css`], series(
     compile_sass,
     minify_css
   ));
 
 const watch_js = () =>
-  watch(['./lib/**/*.js', '!./lib/**/*.min.js'], minify_js);
+  watch([`${lib_dir}/**/*.js`, `!${lib_dir}/**/*.min.js`], minify_js);
 
 
 //----------------------------------------------------------------------
