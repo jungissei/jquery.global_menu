@@ -11,11 +11,6 @@ restart:
 	@make up
 app:
 	docker-compose exec php bin/bash
-ghpages:
-	git checkout -b gh-pages
-	git push origin gh-pages
-	git checkout main
-	git branch -d gh-pages
 plugins:
 	cp node_modules/jquery/dist/jquery.min.js lib/common/js/jquery.min.js
 	cp node_modules/destyle.css/destyle.min.css lib/common/css/destyle.min.css
