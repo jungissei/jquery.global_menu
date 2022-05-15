@@ -2,12 +2,12 @@
 グローバルメニューでのjQueryプラグインです。
 
 ## DEMO
-- [通常版](demo/index.html)
-- [ヘッダーロゴ](demo/index2.html)
-- [アコーディオン](demo/index3.html)
-- [メガメニュー](demo/index4.html)
-- [追従機能](demo/index5.html)
-- [追従機能/スクロールアップで見えなくする](demo/index6.html)
+- [通常版](https://jungissei.github.io/jquery.global_menu/demo/index.html)
+- [ヘッダーロゴ](https://jungissei.github.io/jquery.global_menu/demo/index2.html)
+- [アコーディオン](https://jungissei.github.io/jquery.global_menu/demo/index3.html)
+- [メガメニュー](https://jungissei.github.io/jquery.global_menu/demo/index4.html)
+- [追従機能](https://jungissei.github.io/jquery.global_menu/demo/index5.html)
+- [追従機能/スクロールアップで見えなくする](https://jungissei.github.io/jquery.global_menu/demo/index6.html)
 
 
 ## OPTION
