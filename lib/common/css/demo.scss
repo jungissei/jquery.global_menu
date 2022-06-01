@@ -129,7 +129,7 @@ $fixed_height: 52.39px;
   .gm_inner{
     &.is_fixed{
       box-shadow: #{$gm_shadow};
-      animation: gm_slide_in 0.2s;
+      transition: margin-top 0.2s;
 
       .gm_nav{
         .gm_nav_item{
@@ -140,27 +140,12 @@ $fixed_height: 52.39px;
       }
     }
 
-    &.is_view_out{
-      animation: gm_slide_out 0.2s forwards;
+    &.is_scroll_up{
+      margin-top: -#{$fixed_height};
       box-shadow: none;
     }
-  }
-}
-
-@keyframes gm_slide_in {
-  0%{
-    margin-top: -#{$fixed_height};
-  }
-  100%{
-    margin-top: 0;
-  }
-}
-
-@keyframes gm_slide_out {
-  0%{
-    margin-top: 0;
-  }
-  100%{
-    margin-top: -#{$fixed_height};
+    &.is_scroll_down{
+      margin-top: 0;
+    }
   }
 }
