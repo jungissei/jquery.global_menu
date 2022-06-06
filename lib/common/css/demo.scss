@@ -120,16 +120,10 @@ $gm_shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 
 /*
 * @see plugin/css/modules/_gm_position_fix.scss */
-$height: 68.39px;
-$fixed_height: 52.39px;
-
 .gm_area{
-  height: 68.39px;
-
   .gm_inner{
     &.is_fixed{
       box-shadow: #{$gm_shadow};
-      transition: margin-top 0.2s;
 
       .gm_nav{
         .gm_nav_item{
@@ -140,12 +134,9 @@ $fixed_height: 52.39px;
       }
     }
 
-    &.is_scroll_up{
-      margin-top: -#{$fixed_height};
+    &.is_scroll_hide{
       box-shadow: none;
     }
-    &.is_scroll_down{
-      margin-top: 0;
-    }
+
   }
 }

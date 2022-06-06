@@ -82,24 +82,15 @@
 
 /*
 * @see plugin/css/modules/_gm_position_fix.scss */
-.gm_area {
-  height: 68.39px;
-}
 .gm_area .gm_inner.is_fixed {
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-  -webkit-transition: margin-top 0.2s;
-  transition: margin-top 0.2s;
 }
 .gm_area .gm_inner.is_fixed .gm_nav .gm_nav_item .gm_item_name {
   padding: 1em 0;
 }
-.gm_area .gm_inner.is_scroll_up {
-  margin-top: -52.39px;
+.gm_area .gm_inner.is_scroll_hide {
   -webkit-box-shadow: none;
           box-shadow: none;
-}
-.gm_area .gm_inner.is_scroll_down {
-  margin-top: 0;
 }
 /*# sourceMappingURL=demo.css.map */
