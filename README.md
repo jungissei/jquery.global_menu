@@ -7,7 +7,8 @@
 - [アコーディオン](https://jungissei.github.io/jquery.global_menu/demo/index3.html)
 - [メガメニュー](https://jungissei.github.io/jquery.global_menu/demo/index4.html)
 - [追従機能](https://jungissei.github.io/jquery.global_menu/demo/index5.html)
-- [追従機能/スクロールアップで見えなくする](https://jungissei.github.io/jquery.global_menu/demo/index6.html)
+- [追従機能/スクロールアップで隠す](https://jungissei.github.io/jquery.global_menu/demo/index6.html)
+- [追従機能/最初から](https://jungissei.github.io/jquery.global_menu/demo/index7.html)
 
 
 ## OPTION
@@ -22,7 +23,7 @@
   - [ ] 最大・最小幅で調整されているか
 - スクロール追従機能
   - [ ] スクロール時に追従するか
-- 追従機能/スクロールアップで見えなくする
+- 追従機能/スクロールアップで隠す
   - [ ] スクロールアップでグローバルメニューが見えるか
   - [ ] スクロールダウンでグローバルメニューが見なくなるか
 - その他機能
