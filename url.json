@@ -1,24 +1,24 @@
 [
   {
     "text" : "Basic",
-    "url" : "/jquery.global_menu/global_menu/basic.html"
+    "url" : "/jquery.global_menu/demo/basic.html"
   },{
     "text" : "Header logo",
-    "url" : "/jquery.global_menu/global_menu/header_logo.html"
+    "url" : "/jquery.global_menu/demo/header_logo.html"
   },{
     "text" : "Accordion",
-    "url" : "/jquery.global_menu/global_menu/accordion.html"
+    "url" : "/jquery.global_menu/demo/accordion.html"
   },{
     "text" : "Mega menu",
-    "url" : "/jquery.global_menu/global_menu/mega_menu.html"
+    "url" : "/jquery.global_menu/demo/mega_menu.html"
   },{
-    "text" : "Sticky",
-    "url" : "/jquery.global_menu/global_menu/sticky.html"
+    "text" : "Sticky when scroll below global menu",
+    "url" : "/jquery.global_menu/demo/sticky_when_scroll_below_global_menu.html"
   },{
-    "text" : "Sticky / hide when scroll up",
-    "url" : "/jquery.global_menu/global_menu/sticky2.html"
+    "text" : "Sticky when scroll below the global menu and scrolling down",
+    "url" : "/jquery.global_menu/demo/sticky_when_scroll_below_global_menu_and_scrolling_down.html"
   },{
-    "text" : "Default sticky",
-    "url" : "/jquery.global_menu/global_menu/default_sticky.html"
+    "text" : "Sticky default",
+    "url" : "/jquery.global_menu/demo/sticky_default.html"
   }
 ]
