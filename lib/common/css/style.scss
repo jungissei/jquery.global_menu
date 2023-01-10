@@ -144,6 +144,18 @@
   }
 
   // Header Fixed
+  &:not([data-sticky-scroll]) {
+    &.is_fixed{
+      .layout_inner{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+      }
+    }
+  }
+
   &[data-sticky-scroll] {
     @keyframes fixed_animation{
       0% {
@@ -153,26 +165,54 @@
         transform: translateY(0);
       }
     }
-
-  .layout_inner{
-    will-change: animation;
-  }
-
-    &.is_fixed{
-      .layout_inner{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1;
-        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);
-        animation: fixed_animation 0.2s ease-out 0s 1 normal forwards running;
+    @keyframes fixed_animation_hide{
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-100%);
       }
     }
 
-    &.is_hide{
-      .layout_inner{
-        box-shadow: none;
+    .layout_inner{
+      will-change: animation;
+    }
+
+    &[data-sticky-scroll="below-this"] {
+      &.is_fixed{
+        .layout_inner{
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1;
+          box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);
+          animation: fixed_animation 0.2s ease-out 0s 1 normal forwards running;
+        }
+      }
+    }
+
+    &[data-sticky-scroll="below-this-and-scrolling-down"] {
+      &.is_fixed{
+        .layout_inner{
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1;
+        }
+      }
+
+      &.is_hide{
+        .layout_inner{
+          animation: fixed_animation_hide 0.2s ease-out 0s 1 normal forwards running;
+        }
+      }
+      &.is_show{
+        .layout_inner{
+          box-shadow: 0 4px 5px rgba(0, 0, 0, 0.26);
+          animation: fixed_animation 0.2s ease-out 0s 1 normal forwards running;
+        }
       }
     }
   }

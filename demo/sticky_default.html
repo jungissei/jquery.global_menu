@@ -13,13 +13,7 @@
     />
     <link
       rel="stylesheet"
-      href="../lib/plugin/css/jquery.global_menu.css"
-      type="text/css"
-      media="all"
-    />
-    <link
-      rel="stylesheet"
-      href="../lib/common/css/demo.css"
+      href="../lib/common/css/style.css"
       type="text/css"
       media="all"
     />
@@ -37,54 +31,46 @@
             </div>
           </div>
         </div>
-        <!-- グローバルメニュー ここから-->
-        <section id="global_menu" class="gm_area">
-          <div class="gm_inner is_fixed">
-            <div class="container">
-              <div class="content_width">
-                <!-- ナビメニュー ここから-->
-                <ul class="gm_nav">
-                  <li class="gm_nav_item">
-                    <a href="./index.html" class="gm_item_name"> 通常版 </a>
-                  </li>
-                  <li class="gm_nav_item">
-                    <a href="./index2.html" class="gm_item_name">
-                      ヘッダーロゴ
-                    </a>
-                  </li>
-                  <li class="gm_nav_item">
-                    <a href="./index3.html" class="gm_item_name">
-                      アコーディオン
-                    </a>
-                  </li>
-                  <li class="gm_nav_item">
-                    <a href="./index4.html" class="gm_item_name">
-                      メガメニュー
-                    </a>
-                  </li>
-                  <li class="gm_nav_item">
-                    <a href="./index5.html" class="gm_item_name"> 追従機能 </a>
-                  </li>
-                  <li class="gm_nav_item">
-                    <a href="./index6.html" class="gm_item_name">
-                      追従機能/スクロールアップで隠す
-                    </a>
-                  </li>
-                  <li class="gm_nav_item">
-                    <a href="./index7.html" class="gm_item_name">
-                      追従機能/最初から
-                    </a>
-                  </li>
-                </ul>
-                <!-- ナビメニュー ここから-->
+        <div id="template_header" class="page_layout layout1 is_fixed">
+          <div class="layout_inner">
+            <div class="layout_container">
+              <div class="layout_width">
+                <nav class="header_nav">
+                  <ul class="nav_items">
+                    <li class="nav_item">
+                      <a href="#" class="item_name">Link1</a>
+                    </li>
+                    <li class="nav_item">
+                      <a href="#" class="item_name">Link2</a>
+                    </li>
+                    <li class="nav_item">
+                      <a href="#" class="item_name">Link3</a>
+                    </li>
+                    <li class="nav_item">
+                      <a href="#" class="item_name">Link4</a>
+                    </li>
+                    <li class="nav_item">
+                      <a href="#" class="item_name">Link5</a>
+                    </li>
+                    <li class="nav_item">
+                      <a href="#" class="item_name">Link6</a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
             </div>
           </div>
-        </section>
-        <!-- グローバルメニュー ここまで-->
+        </div>
       </header>
-      <main></main>
+      <main>
+        <div id="content_block"></div>
+      </main>
       <footer></footer>
     </div>
+
+    <script
+      type="text/javascript"
+      src="/jquery.common/js/template/content_block.js"
+    ></script>
   </body>
 </html>
